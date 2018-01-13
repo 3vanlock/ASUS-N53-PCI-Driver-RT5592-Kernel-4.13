@@ -10,8 +10,7 @@ Forked from ihttps://github.com/kuttor/Asus-N53-PCU-RT5592STA-Driver-for-Linux-K
     sudo make install
     sudo modprobe rt5592sta
 
-### Troubleshooting
-- I had to bring the wireless interface down and up and then restart NetworkManager. 
+### Cycle network interface and restart NetworkManager 
     sudo ip link set 'link_name' down
     sudo ip link set 'link_name' up
     sudo systemctl restart NetworkManager
