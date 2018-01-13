@@ -694,9 +694,9 @@ int rt_ioctl_iwaplist(struct net_device *dev,
 		set_quality(pAd, &qual[i], pList); /*&pAd->ScanTab.BssEntry[i]); */
 	}
 	data->length = i;
-	memcpy(extra, &addr, i*sizeof(addr[0]));
+	memcpy(extra, addr, i*sizeof(struct sockaddr));
 	data->flags = 1;		/* signal quality present (sort of) */
-	memcpy(extra + i*sizeof(addr[0]), &qual, i*sizeof(qual[i]));
+	memcpy(extra + i*sizeof(struct sockaddr), &qual, i*sizeof(qual[i]));
 
 	os_free_mem(NULL, addr);
 	os_free_mem(NULL, pBssList->pList);
